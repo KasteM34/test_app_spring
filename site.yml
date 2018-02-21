@@ -1,0 +1,6 @@
+- hosts: localhost
+  roles:
+    - role: srsp.oracle-java
+      vars:
+        java_set_javahome: true
+    - role: robdyke.maven
