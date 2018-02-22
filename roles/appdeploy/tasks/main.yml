@@ -28,7 +28,7 @@
     mode: 0644
   notify: restart app
 
-- name: Ensure nginx is started and enabled to start at boot.
+- name: Ensure app is started and enabled to start at boot.
   service: 
     name: "{{ app_name }}"
     state: started
