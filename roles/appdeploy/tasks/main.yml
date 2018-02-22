@@ -1,6 +1,6 @@
 ---
 
-- name: Ensure user is created
+- name: Ensure app user is created
   user:
     name: "{{ app_user }}" 
 
