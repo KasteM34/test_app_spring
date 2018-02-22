@@ -9,10 +9,9 @@
     mode: 0644
   when: nginx_yum_repo_enabled
 
-- name: Ensure nginx is installed.
-  yum:
-    name: "{{ nginx_package_name }}"
-    state: installed
+- name: install nginx packages
+  yum: name="{{ item.name }}" state=installed
+  with_items: "{{ packages }}"
 
 - name: Ensure nginx is started and enabled to start at boot.
   service: name=nginx state=started enabled=yes
