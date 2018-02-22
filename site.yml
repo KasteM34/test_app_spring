@@ -7,3 +7,12 @@
         java_set_javahome: true
     - role: robdyke.maven
     - role: mysql
+    - role: jdauphant.ssl-certs
+      vars:
+        ssl_certs_common_name: "hotelspring.com"
+        ssl_certs_path_owner: "root"
+        ssl_certs_path_group: "root"
+        ssl_certs_country: "CZ"
+        ssl_certs_locality: "Prague"
+        ssl_certs_organization: "Hotel Spring"
+        ssl_certs_state: "Prague"
