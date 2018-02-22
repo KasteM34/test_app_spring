@@ -1,0 +1,8 @@
+[Unit]
+Description={{ app_description }}
+[Service]
+ExecStart=/usr/bin/java -jar -Dspring.profiles.active=mysql {{ app_path }}/{{ app_filename }}
+User={{ app_user }}
+Type=simple
+[Install]
+WantedBy=multi-user.target

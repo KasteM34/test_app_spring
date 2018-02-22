@@ -1,0 +1,35 @@
+---
+
+- name: Ensure user is created
+  user:
+    name: "{{ app_user }}" 
+
+- name: Ensure app folder exists.
+  file:
+    path: "{{ app_path }}"
+    state: directory
+    recurse: yes
+    owner: "{{ app_user }}" 
+    group: "{{ app_group }}" 
+
+- name: Send app to server
+  copy:
+    src: spring-boot-rest-example-0.5.0.jar
+    dest: "{{ app_path }}/{{ app_filename }}"
+    owner: "{{ app_user }}" 
+    group: "{{ app_group }}" 
+    mode: 0644
+  notify: restart app
+
+- name: Add systemd service file to manage state
+  template:
+    src: "app.service.j2"
+    dest: "{{ systemd_service_path }}/{{ app_name }}.service"
+    mode: 0644
+  notify: restart app
+
+- name: Ensure nginx is started and enabled to start at boot.
+  service: 
+    name: "{{ app_name }}"
+    state: started
+    enabled: yes

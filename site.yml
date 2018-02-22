@@ -27,4 +27,12 @@
         proxy_on: yes
         proxy_pass_server: "localhost"
         proxy_pass_port: "8091"
-        
+    - role: appdeploy
+      vars:
+        app_user: "hotelspring"
+        app_group: "hotelspring"
+        app_path: "/opt/{{ app_name }}"
+        app_description: "Sample app"
+        app_extention: ".jar"
+        app_name: "hotelspring"
+                

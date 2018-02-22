@@ -1,0 +1,4 @@
+---
+
+- name: reload app
+  service: name={{ app_name }} state=restart

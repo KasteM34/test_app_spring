@@ -1,0 +1,11 @@
+---
+
+app_user:
+app_group:
+app_path:
+app_description:
+app_extention:
+app_name:
+app_filename: {{ app_name }}{{ app_extention }}
+
+systemd_service_path: /usr/lib/systemd/system
