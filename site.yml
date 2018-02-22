@@ -4,3 +4,4 @@
       vars:
         java_set_javahome: true
     - role: robdyke.maven
+    - role: mysql

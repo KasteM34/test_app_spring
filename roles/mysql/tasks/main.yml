@@ -1,0 +1,50 @@
+---
+
+- name: install mysql packages
+  yum: name="{{ item.name }}" state=installed
+  with_items: "{{ packages }}"
+
+- name: Enable and start mysql
+  service:
+    name: "{{ mysql_service }}"
+    state: started
+    enabled: yes
+
+- name: Create mysql database
+  mysql_db: name={{ mysql_db }} state=present
+
+- name: Create mysql user
+  mysql_user:
+    name={{ mysql_user }}
+    password={{ mysql_password }}
+    priv={{ mysql_db }}.*:ALL
+
+- name: Generate new MariaDB root password
+  command: openssl rand -hex 7 creates={{ mysql_my_config }}
+  register: mysql_new_root_pass
+
+- name: Remove anonymous users
+  mysql_user: name="" state=absent
+  when: mysql_new_root_pass.changed
+
+- name: Remove test database
+  mysql_db: name=test state=absent
+  when: mysql_new_root_pass.changed
+
+- name: Output new root password
+  debug: msg="New root password is {{ mysql_new_root_pass.stdout }}"
+  when: mysql_new_root_pass.changed
+
+- name: Update root password
+  mysql_user: name=root host={{ item }} password={{ mysql_new_root_pass.stdout }}
+  with_items:
+    - 127.0.0.1
+    - ::1
+    - localhost
+  when: mysql_new_root_pass.changed
+
+- name: Create my.cnf
+  template:
+    src: "my.cnf.j2"
+    dest: "{{ mysql_my_config }}"
+  when: mysql_new_root_pass.changed

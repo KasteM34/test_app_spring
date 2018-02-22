@@ -1,0 +1,14 @@
+---
+
+packages:
+  - name: mariadb
+  - name: mariadb-server
+  - name: MySQL-python
+
+mysql_service: mariadb
+
+mysql_db: bootexample
+mysql_user: bootexample
+mysql_password: 
+
+mysql_my_config: /root/.my.cnf
