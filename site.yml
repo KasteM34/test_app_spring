@@ -7,6 +7,9 @@
         java_set_javahome: true
     - role: robdyke.maven
     - role: mysql
+      vars:
+        mysql_db: bootexample
+        mysql_user: bootexample
     - role: jdauphant.ssl-certs
       vars:
         ssl_certs_common_name: "hotelspring.com"

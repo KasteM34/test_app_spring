@@ -7,8 +7,8 @@ packages:
 
 mysql_service: mariadb
 
-mysql_db: bootexample
-mysql_user: bootexample
+mysql_db:
+mysql_user:
 mysql_password: 
 
 mysql_my_config: /root/.my.cnf
