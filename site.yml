@@ -1,4 +1,6 @@
 - hosts: localhost
+  vars_files:
+    - group_vars/vault/secrets
   roles:
     - role: srsp.oracle-java
       vars:
