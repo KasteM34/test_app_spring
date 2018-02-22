@@ -1,3 +1,17 @@
-# The name of the nginx package to install.
+---
+
 packages:
   - name: nginx
+
+nginx_vhost_path: /etc/nginx/conf.d
+
+# variables to be defined if you want a vhost.
+#domain_name: 
+#http_to_https_redirection: 
+#use_ssl: 
+#ssl_on: 
+#ssl_certificate_path: 
+#ssl_certificate_key_path: 
+#proxy_on: 
+#proxy_pass_server: 
+#proxy_pass_port: 

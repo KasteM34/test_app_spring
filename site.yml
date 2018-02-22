@@ -16,3 +16,15 @@
         ssl_certs_locality: "Prague"
         ssl_certs_organization: "Hotel Spring"
         ssl_certs_state: "Prague"
+    - role: nginx
+      vars:
+        domain_name: "hotelspring.com"
+        http_to_https_redirection: yes
+        use_ssl: yes
+        ssl_on: yes
+        ssl_certificate_path: "/etc/ssl/hotelspring.com/hotelspring.com.pem"
+        ssl_certificate_key_path: "/etc/ssl/hotelspring.com/hotelspring.com.key"
+        proxy_on: yes
+        proxy_pass_server: "localhost"
+        proxy_pass_port: "8091"
+        

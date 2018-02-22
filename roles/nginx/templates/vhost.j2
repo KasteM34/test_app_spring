@@ -1,0 +1,36 @@
+{% if http_to_https_redirection is defined %}
+server {
+    listen       80;
+    server_name  {{ domain_name }};
+    return       return 301 https://$host$request_uri;
+}
+{% endif %}
+
+server {
+
+{% if use_ssl is defined %}
+    listen 443 ssl;
+{% endif %}
+{% if server_name is defined %}
+    server_name {{ domain_name }} www.{{ domain_name  }};
+{% endif %}
+
+{% if ssl_on is defined %}
+    ssl on;
+    ssl_certificate {{ ssl_certificate_path }};
+    ssl_certificate_key {{ ssl_certificate_key_path }};
+{% endif %}
+
+{% if proxy_on is defined %}
+    location / {
+        proxy_pass http://{{ proxy_pass_server }}:{{ proxy_pass_port }};
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+{% endif %}
+
+
+}
+

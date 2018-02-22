@@ -12,5 +12,14 @@
   yum: name="{{ item.name }}" state=installed
   with_items: "{{ packages }}"
 
+- name: Add managed vhost config files.
+  template:
+    src: "vhost.j2"
+    dest: "{{ nginx_vhost_path }}/{{ domain_name }}.conf"
+    mode: 0644
+  when: domain_name is defined
+  notify: reload nginx
+
+
 - name: Ensure nginx is started and enabled to start at boot.
   service: name=nginx state=started enabled=yes
