@@ -47,4 +47,4 @@ vault password is : qwerty
 
 go to your browser and go to https://hotelspring.com/health
 
-App could takes 15-20secs to run after the Ansible run is done.
+App could takes 15-30 seconds to run after the Ansible run is done.
