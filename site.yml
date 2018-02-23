@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: servers
   vars_files:
     - group_vars/vault/secrets
   become: yes
