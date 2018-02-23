@@ -42,6 +42,19 @@ Then add the following to your /etc/hosts.
 
 vault password is : qwerty
 
+### App management.
+
+App is started and enable at boot after deployment and daemonized with systemd.
+
+Status:
+`sudo systemctl status hotelspring`
+
+Start:
+`sudo systemctl start hotelspring`
+
+Stop:
+`sudo systemctl stop hotelspring`
+
 
 ### Check if app is running.
 
