@@ -64,7 +64,7 @@ App could takes 15-30 seconds to run after the Ansible run is done.
 
 ## Roles
 
-I like to use and check what is available on ansible galaxy before starting any work to reinvent the wheel.
+I like to use and check what is available on ansible galaxy before starting any work to not reinvent the wheel.
 
 - srsp.oracle-java taken on : https://galaxy.ansible.com/srsp/oracle-java/
 - robdyke.maven taken on : https://galaxy.ansible.com/robdyke/maven/
