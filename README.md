@@ -62,6 +62,17 @@ go to your browser and go to https://hotelspring.com/health
 
 App could takes 15-30 seconds to run after the Ansible run is done.
 
+## Roles
+
+I like to use and check what is available on ansible galaxy before starting any work to reinvent the wheel.
+
+- srsp.oracle-java taken on : https://galaxy.ansible.com/srsp/oracle-java/
+- robdyke.maven taken on : https://galaxy.ansible.com/robdyke/maven/
+- jdauphant.ssl-certs taken on : https://galaxy.ansible.com/robdyke/maven/
+- mysql done by me
+- nginx done by me
+- appdeploy done by me
+
 ## Not implemented features
 
 From the test, i didn't know if the jar generation was part of the deployment pipeline, so it's not here, the .jar is locally in roles/appdeployfiles/ , if the test was intended to have the jar generation, i can make it.
