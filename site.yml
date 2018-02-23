@@ -6,7 +6,7 @@
     - role: srsp.oracle-java
       vars:
         java_set_javahome: true
-    - role: robdyke.maven
+    #- role: robdyke.maven
     - role: mysql
       vars:
         create_db: yes
