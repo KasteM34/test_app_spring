@@ -12,7 +12,7 @@ This app is deployed using ansible, you will need to install it on your machine/
 
 On server side, you need to have RedHat 7 or CentOS 7.
 
-You need as well a user that will accept your ssh key (in your authorized_keys) and sudoers to execute some commands as superuser.
+You need as well a user that will accept your ssh public key (manually on /home/RemoteUser/authorized_keys or using ssh-copy-id) and be sudoers to execute some commands as superuser.
 
 
 ### Add server ip and user to your ansible host file.
