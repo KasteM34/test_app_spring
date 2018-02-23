@@ -48,3 +48,7 @@ vault password is : qwerty
 go to your browser and go to https://hotelspring.com/health
 
 App could takes 15-30 seconds to run after the Ansible run is done.
+
+## Not implemented features
+
+From the test, i didn't know if the jar generation was part of the deployment pipeline, so it's not here, the .jar is locally in roles/appdeployfiles/ , if the test was intended to have the jar generation, i can make it.
