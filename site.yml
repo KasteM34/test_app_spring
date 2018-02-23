@@ -1,6 +1,7 @@
 - hosts: localhost
   vars_files:
     - group_vars/vault/secrets
+  become: yes
   roles:
     - role: srsp.oracle-java
       vars:
@@ -10,6 +11,14 @@
       vars:
         mysql_db: bootexample
         mysql_user: bootexample
+    - role: appdeploy
+      vars:
+        app_user: "hotelspring"
+        app_group: "hotelspring"
+        app_path: "/opt/{{ app_name }}"
+        app_description: "Sample app"
+        app_extention: ".jar"
+        app_name: "hotelspring"
     - role: jdauphant.ssl-certs
       vars:
         ssl_certs_common_name: "hotelspring.com"
@@ -30,12 +39,4 @@
         proxy_on: yes
         proxy_pass_server: "localhost"
         proxy_pass_port: "8091"
-    - role: appdeploy
-      vars:
-        app_user: "hotelspring"
-        app_group: "hotelspring"
-        app_path: "/opt/{{ app_name }}"
-        app_description: "Sample app"
-        app_extention: ".jar"
-        app_name: "hotelspring"
                 
