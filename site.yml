@@ -9,7 +9,9 @@
     - role: robdyke.maven
     - role: mysql
       vars:
+        create_db: yes
         mysql_db: bootexample
+        create_user: yes
         mysql_user: bootexample
     - role: appdeploy
       vars:

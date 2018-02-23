@@ -12,12 +12,14 @@
 
 - name: Create mysql database
   mysql_db: name={{ mysql_db }} state=present
+  when: create_db is defined
 
 - name: Create mysql user
   mysql_user:
     name={{ mysql_user }}
     password={{ mysql_password }}
     priv={{ mysql_db }}.*:ALL
+  when: create_user is defined
 
 - name: Generate new MariaDB root password
   command: openssl rand -hex 7 creates={{ mysql_my_config }}

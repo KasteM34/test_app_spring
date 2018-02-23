@@ -12,3 +12,7 @@ mysql_user:
 mysql_password: 
 
 mysql_my_config: /root/.my.cnf
+
+# if those vars are defined, it's going to create an user and a database
+# create_user:
+# create_db:
