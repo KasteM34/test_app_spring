@@ -21,8 +21,8 @@ Into your hosts file in this ansible structure, please add the server ip and the
 
 add line like :
 
-`[servers]
-ServerIP ansible_user=UserOnServer`
+```[servers]
+ServerIP ansible_user=UserOnServer```
 
 ### Add hotelspring to your /etc/hosts
 
