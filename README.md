@@ -26,6 +26,8 @@ add line like :
 ServerIP ansible_user=UserOnServer
 ```
 
+> Replace ServerIP with the IP from your remote server and UserOnServer with the user used on the remote server...
+
 ### Add hotelspring to your /etc/hosts
 
 Once your server is started, you need to find the IP from the server where you will be running the app.
