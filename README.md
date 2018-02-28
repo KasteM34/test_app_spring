@@ -76,3 +76,5 @@ I like to use and check what is available on ansible galaxy before starting any 
 ## Not implemented features
 
 From the test, i didn't know if the jar generation was part of the deployment pipeline, so it's not here, the .jar is locally in roles/appdeployfiles/ , if the test was intended to have the jar generation, i can make it.
+
+I should have think about getting the .jar from my website or a public s3, i just forgot about that and make the git repo large. sorry about that.
