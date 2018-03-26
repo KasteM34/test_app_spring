@@ -68,7 +68,7 @@ I like to use and check what is available on ansible galaxy before starting any 
 
 - srsp.oracle-java taken on : https://galaxy.ansible.com/srsp/oracle-java/
 - robdyke.maven taken on : https://galaxy.ansible.com/robdyke/maven/
-- jdauphant.ssl-certs taken on : https://galaxy.ansible.com/robdyke/maven/
+- jdauphant.ssl-certs taken on : https://galaxy.ansible.com/jdauphant/ssl-certs/
 - mysql done by me
 - nginx done by me
 - appdeploy done by me
