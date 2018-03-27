@@ -38,7 +38,7 @@ Then add the following to your /etc/hosts.
 
 ### Run Ansible playbook
 
-`ansible-playbook site.yml --ask-vault-pass`
+`ansible-playbook site.yml --ask-vault-pass -i hosts`
 
 vault password is : qwerty
 
